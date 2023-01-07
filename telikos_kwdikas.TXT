@@ -1,0 +1,37 @@
+//grapste ena programma (se opoia glwssa programmatismou thelete) pou tha diavazei apo tin kathierwmeni eisodo noukleotidikes allilouxies
+//kai tha tis eksetazei mia pros mia gia to an periexoun i oxi mia tupiki/apli prokaruwtiki kwdikopoiousa allilouxia (me kwdikonio enarksis
+//sto telos tis kwdikopoiousas perioxis ena apo ta kwdikonia liksis kai xwris alla kwdikonia liksis sto endiameso tmima.
+#include <stdio.h>
+#include <string.h>
+main()
+{
+	int i , k , length ;
+	char seq[100] ;
+	
+	while( scanf("%s" , seq ) == 1 )
+	{
+		length = strlen (seq) ;
+		for (i=0 ; i <length ; i++)
+			{
+				if (seq[i] == 'A' && seq[i+1] =='U' && seq[i+2] == 'G' )
+					{
+							printf("vrikame to kwdikonio enarksis sti thesi %d\n" , i+1 ) ; /* edw vazw "i+1" kai oxi sketo "i" dioti i arithmisi ksekinaei apo to 0 */
+	//MEXRI EDW PAME KALA , TWRA KSEKINAW APO TIN PAROUSA TIMI TOU i KAI PAIRNW TRIADES NOUKLEOTIDIWN ME k WSTE NA APOFUGW TA ENDIAMESA PITHANA KWDIKONIA LIKSIS
+							for(k=i ; k<length ; k+=3)
+								{ //UGA KWDIDKONIO LIKSIS							                    UAG                                               UAA
+									if (seq[k] == 'U' && seq[k+1] == 'G' && seq[k+2] == 'A' || seq[k] == 'U' && seq[k+1] == 'A' && seq[k+2] == 'G' || seq[k] == 'U' && seq[k+1] == 'A' && seq[k+2] == 'A')
+									{
+										printf("kai kwdikonio liksis sti thesi %d\n" , k+1);
+										printf("MALLON THA PAROYME 10 STON GLYKO!!!") ;
+									}
+								}
+								
+								
+					}
+	
+			}
+		
+		
+	}	
+	
+}
